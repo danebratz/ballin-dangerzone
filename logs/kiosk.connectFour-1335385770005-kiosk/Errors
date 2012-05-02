@@ -1,0 +1,4 @@
+LOG 1335385770205 [L9]: <ERR> (in GamePlayer) java.lang.NullPointerException
+	at player.gamer.Assn4Random.play(Assn4Random.java:50)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)

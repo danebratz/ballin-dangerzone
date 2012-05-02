@@ -1,0 +1,77 @@
+LOG 1335390655843 [L0]: [Received at 1335390655843] ( START kiosk.connectFour-1335390655699 black (( role red ) ( role black ) ( init ( control red ) ) ( <= ( legal red noop ) ( true ( control black ) ) ) ( <= ( legal red ( drop ?x ) ) ( true ( control red ) ) ( columnOpen ?x ) ) ( <= ( legal black noop ) ( true ( control red ) ) ) ( <= ( legal black ( drop ?x ) ) ( true ( control black ) ) ( columnOpen ?x ) ) ( <= ( next ( cell ?x 1 ?player ) ) ( does ?player ( drop ?x ) ) ( columnEmpty ?x ) ) ( <= ( next ( cell ?x ?y2 ?player ) ) ( does ?player ( drop ?x ) ) ( cellOpen ?x ?y2 ) ( succ ?y1 ?y2 ) ( not ( cellOpen ?x ?y1 ) ) ) ( <= ( next ( cell ?x ?y ?player ) ) ( true ( cell ?x ?y ?player ) ) ) ( <= ( next ( control red ) ) ( true ( control black ) ) ) ( <= ( next ( control black ) ) ( true ( control red ) ) ) ( <= terminal ( line red ) ) ( <= terminal ( line black ) ) ( <= terminal ( not boardOpen ) ) ( <= ( goal red 100 ) ( line red ) ) ( <= ( goal red 50 ) ( not ( line red ) ) ( not ( line black ) ) ( not boardOpen ) ) ( <= ( goal red 0 ) ( line black ) ) ( <= ( goal red 0 ) ( not ( line red ) ) ( not ( line black ) ) boardOpen ) ( <= ( goal black 100 ) ( line black ) ) ( <= ( goal black 50 ) ( not ( line red ) ) ( not ( line black ) ) ( not boardOpen ) ) ( <= ( goal black 0 ) ( line red ) ) ( <= ( goal black 0 ) ( not ( line red ) ) ( not ( line black ) ) boardOpen ) ( <= ( cellOpen ?x ?y ) ( x ?x ) ( y ?y ) ( not ( true ( cell ?x ?y red ) ) ) ( not ( true ( cell ?x ?y black ) ) ) ) ( <= ( columnOpen ?x ) ( cellOpen ?x 6 ) ) ( <= ( columnEmpty ?x ) ( cellOpen ?x 1 ) ) ( <= boardOpen ( x ?x ) ( columnOpen ?x ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( true ( cell ?x2 ?y ?player ) ) ( true ( cell ?x3 ?y ?player ) ) ( true ( cell ?x4 ?y ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x ?y1 ?player ) ) ( succ ?y1 ?y2 ) ( succ ?y2 ?y3 ) ( succ ?y3 ?y4 ) ( true ( cell ?x ?y2 ?player ) ) ( true ( cell ?x ?y3 ?player ) ) ( true ( cell ?x ?y4 ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y1 ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( succ ?y1 ?y2 ) ( succ ?y2 ?y3 ) ( succ ?y3 ?y4 ) ( true ( cell ?x2 ?y2 ?player ) ) ( true ( cell ?x3 ?y3 ?player ) ) ( true ( cell ?x4 ?y4 ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y4 ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( succ ?y3 ?y4 ) ( succ ?y2 ?y3 ) ( succ ?y1 ?y2 ) ( true ( cell ?x2 ?y3 ?player ) ) ( true ( cell ?x3 ?y2 ?player ) ) ( true ( cell ?x4 ?y1 ?player ) ) ) ( succ 1 2 ) ( succ 2 3 ) ( succ 3 4 ) ( succ 4 5 ) ( succ 5 6 ) ( succ 6 7 ) ( succ 7 8 ) ( x 1 ) ( x 2 ) ( x 3 ) ( x 4 ) ( x 5 ) ( x 6 ) ( x 7 ) ( x 8 ) ( y 1 ) ( y 2 ) ( y 3 ) ( y 4 ) ( y 5 ) ( y 6 ) ) 30 10)
+LOG 1335390655845 [L0]: [Sent at 1335390655845] ready
+LOG 1335390655853 [L0]: [Received at 1335390655853] ( START kiosk.connectFour-1335390655699 red (( role red ) ( role black ) ( init ( control red ) ) ( <= ( legal red noop ) ( true ( control black ) ) ) ( <= ( legal red ( drop ?x ) ) ( true ( control red ) ) ( columnOpen ?x ) ) ( <= ( legal black noop ) ( true ( control red ) ) ) ( <= ( legal black ( drop ?x ) ) ( true ( control black ) ) ( columnOpen ?x ) ) ( <= ( next ( cell ?x 1 ?player ) ) ( does ?player ( drop ?x ) ) ( columnEmpty ?x ) ) ( <= ( next ( cell ?x ?y2 ?player ) ) ( does ?player ( drop ?x ) ) ( cellOpen ?x ?y2 ) ( succ ?y1 ?y2 ) ( not ( cellOpen ?x ?y1 ) ) ) ( <= ( next ( cell ?x ?y ?player ) ) ( true ( cell ?x ?y ?player ) ) ) ( <= ( next ( control red ) ) ( true ( control black ) ) ) ( <= ( next ( control black ) ) ( true ( control red ) ) ) ( <= terminal ( line red ) ) ( <= terminal ( line black ) ) ( <= terminal ( not boardOpen ) ) ( <= ( goal red 100 ) ( line red ) ) ( <= ( goal red 50 ) ( not ( line red ) ) ( not ( line black ) ) ( not boardOpen ) ) ( <= ( goal red 0 ) ( line black ) ) ( <= ( goal red 0 ) ( not ( line red ) ) ( not ( line black ) ) boardOpen ) ( <= ( goal black 100 ) ( line black ) ) ( <= ( goal black 50 ) ( not ( line red ) ) ( not ( line black ) ) ( not boardOpen ) ) ( <= ( goal black 0 ) ( line red ) ) ( <= ( goal black 0 ) ( not ( line red ) ) ( not ( line black ) ) boardOpen ) ( <= ( cellOpen ?x ?y ) ( x ?x ) ( y ?y ) ( not ( true ( cell ?x ?y red ) ) ) ( not ( true ( cell ?x ?y black ) ) ) ) ( <= ( columnOpen ?x ) ( cellOpen ?x 6 ) ) ( <= ( columnEmpty ?x ) ( cellOpen ?x 1 ) ) ( <= boardOpen ( x ?x ) ( columnOpen ?x ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( true ( cell ?x2 ?y ?player ) ) ( true ( cell ?x3 ?y ?player ) ) ( true ( cell ?x4 ?y ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x ?y1 ?player ) ) ( succ ?y1 ?y2 ) ( succ ?y2 ?y3 ) ( succ ?y3 ?y4 ) ( true ( cell ?x ?y2 ?player ) ) ( true ( cell ?x ?y3 ?player ) ) ( true ( cell ?x ?y4 ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y1 ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( succ ?y1 ?y2 ) ( succ ?y2 ?y3 ) ( succ ?y3 ?y4 ) ( true ( cell ?x2 ?y2 ?player ) ) ( true ( cell ?x3 ?y3 ?player ) ) ( true ( cell ?x4 ?y4 ?player ) ) ) ( <= ( line ?player ) ( true ( cell ?x1 ?y4 ?player ) ) ( succ ?x1 ?x2 ) ( succ ?x2 ?x3 ) ( succ ?x3 ?x4 ) ( succ ?y3 ?y4 ) ( succ ?y2 ?y3 ) ( succ ?y1 ?y2 ) ( true ( cell ?x2 ?y3 ?player ) ) ( true ( cell ?x3 ?y2 ?player ) ) ( true ( cell ?x4 ?y1 ?player ) ) ) ( succ 1 2 ) ( succ 2 3 ) ( succ 3 4 ) ( succ 4 5 ) ( succ 5 6 ) ( succ 6 7 ) ( succ 7 8 ) ( x 1 ) ( x 2 ) ( x 3 ) ( x 4 ) ( x 5 ) ( x 6 ) ( x 7 ) ( x 8 ) ( y 1 ) ( y 2 ) ( y 3 ) ( y 4 ) ( y 5 ) ( y 6 ) ) 30 10)
+LOG 1335390655891 [L0]: [Sent at 1335390655891] ready
+LOG 1335390655915 [L0]: [Received at 1335390655915] ( PLAY kiosk.connectFour-1335390655699 NIL )
+LOG 1335390655915 [L9]: <ERR> java.lang.NullPointerException
+	at player.gamer.Assn4Random.play(Assn4Random.java:55)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390655916 [L0]: [Sent at 1335390655916] nil
+LOG 1335390655918 [L0]: [Received at 1335390655918] ( PLAY kiosk.connectFour-1335390655699 NIL )
+LOG 1335390657488 [L0]: [Sent at 1335390657488] ( drop 3 )
+LOG 1335390657505 [L0]: [Received at 1335390657505] ( PLAY kiosk.connectFour-1335390655699 (( drop 3 ) noop ) )
+LOG 1335390657506 [L0]: [Received at 1335390657506] ( PLAY kiosk.connectFour-1335390655699 (( drop 3 ) noop ) )
+LOG 1335390657506 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390657507 [L0]: [Sent at 1335390657506] nil
+LOG 1335390657511 [L0]: [Sent at 1335390657511] noop
+LOG 1335390657537 [L0]: [Received at 1335390657537] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390657537 [L0]: [Received at 1335390657537] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390657538 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390657538 [L0]: [Sent at 1335390657538] nil
+LOG 1335390659840 [L0]: [Sent at 1335390659840] ( drop 4 )
+LOG 1335390659847 [L0]: [Received at 1335390659847] ( PLAY kiosk.connectFour-1335390655699 (( drop 4 ) noop ) )
+LOG 1335390659848 [L0]: [Received at 1335390659848] ( PLAY kiosk.connectFour-1335390655699 (( drop 4 ) noop ) )
+LOG 1335390659849 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390659849 [L0]: [Sent at 1335390659849] nil
+LOG 1335390659858 [L0]: [Sent at 1335390659858] noop
+LOG 1335390659870 [L0]: [Received at 1335390659870] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390659871 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390659872 [L0]: [Sent at 1335390659872] nil
+LOG 1335390659873 [L0]: [Received at 1335390659873] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390662458 [L0]: [Sent at 1335390662458] ( drop 7 )
+LOG 1335390662476 [L0]: [Received at 1335390662476] ( PLAY kiosk.connectFour-1335390655699 (( drop 7 ) noop ) )
+LOG 1335390662481 [L0]: [Sent at 1335390662481] noop
+LOG 1335390662499 [L0]: [Received at 1335390662499] ( PLAY kiosk.connectFour-1335390655699 (( drop 7 ) noop ) )
+LOG 1335390662500 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390662500 [L0]: [Sent at 1335390662500] nil
+LOG 1335390662525 [L0]: [Received at 1335390662525] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390662525 [L0]: [Received at 1335390662525] ( PLAY kiosk.connectFour-1335390655699 (noop ( drop 7 ) ) )
+LOG 1335390662528 [L9]: <ERR> java.lang.NullPointerException
+	at java.util.HashSet.<init>(HashSet.java:99)
+	at util.statemachine.implementation.prover.query.ProverQueryBuilder.getContext(ProverQueryBuilder.java:37)
+	at util.statemachine.implementation.prover.ProverStateMachine.getNextState(ProverStateMachine.java:97)
+	at player.gamer.Assn4Random.play(Assn4Random.java:58)
+	at player.request.grammar.PlayRequest.process(PlayRequest.java:31)
+	at player.GamePlayer.run(GamePlayer.java:93)
+LOG 1335390662529 [L0]: [Sent at 1335390662529] nil

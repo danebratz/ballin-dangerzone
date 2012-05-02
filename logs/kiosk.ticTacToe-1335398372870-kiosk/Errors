@@ -1,0 +1,2 @@
+LOG 1335398380240 [L9]: <ERR> (in GamePlayer) Got stop message not intended for current game: ignoring.
+LOG 1335398380248 [L9]: <ERR> (in StateMachine) Got goal results of size: 0 when expecting size one.
