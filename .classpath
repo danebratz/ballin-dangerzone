@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="bin" path="src"/>
+	<classpathentry kind="var" path="JRE_LIB" sourcepath="JRE_SRC"/>
+	<classpathentry kind="con" path="/Users/dbratz/Downloads/ggp-spr1112/bin"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Users/dbratz/Downloads/ggp-spr1112/src/external/FlyingSaucer/core-renderer.jar"/>
+	<classpathentry kind="lib" path="/Users/dbratz/Downloads/ggp-spr1112/src/external/JTidy/Tidy.jar"/>
+	<classpathentry kind="lib" path="/Users/dbratz/Downloads/ggp-spr1112/src/external/JGoodiesForms/forms-1.2.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
