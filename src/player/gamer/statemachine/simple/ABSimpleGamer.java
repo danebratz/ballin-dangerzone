@@ -28,7 +28,7 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	private static final int GOAL_MAX = 100;
 	private static final int GOAL_MIN = 0;
 	private static final int EVAL_FN_MAX = 80;
-	private int max_search_mobility; //use this in metagame computation of relative max for heuristics
+	private double max_search_mobility; //use this in metagame computation of relative max for heuristics
 	private long finishBy;
 	
 	@Override
@@ -48,8 +48,7 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	 * performs a necessary metagame if the mobility family of heuristics is in use
 	 */
 	private void mobilityMetaGame(long timeout) throws TransitionDefinitionException, MoveDefinitionException{
-		this.max_search_mobility = monteCarloDepthSearch(timeout);
-			
+		this.max_search_mobility = (double)monteCarloDepthSearch(timeout);
 	}
 	
 	/*
@@ -182,7 +181,10 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	 */
 	private int mobility1(MachineState state, Role role) throws MoveDefinitionException{
 		List<Move> moveList = getStateMachine().getLegalMoves(state,role);
-		return moveList.size();
+		double size = (double)moveList.size();
+		int normalized = (int) ((size/this.max_search_mobility) * GOAL_MAX);
+		if(normalized >= EVAL_FN_MAX) return EVAL_FN_MAX;
+		return normalized;
 	}
 	
 	/*
@@ -202,20 +204,13 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	/*
 	 * 
 	 */
-	private int opponentMinMobility(MachineState state, Role role) {
-
+	private int opponentMinMobility(MachineState state, Role role) throws MoveDefinitionException {
 		List<Role> roles = getStateMachine().getRoles();
-
 		List<Move> moveList = getStateMachine().getLegalMoves(state,role);
-
 		ArrayList<Integer> mobilityArray = new ArrayList<Integer>();
-
 		int mobilitySum = 0;
-
-
-
 		for(Role opponentRole : roles) {
-			int mobility = evalfun(state,opponentRole);//use either one of our mobility functions here
+			int mobility = mobility1(state,opponentRole);//use either one of our mobility functions here
 			mobilitySum += mobility;
 			mobilityArray.add(mobility);
 		}
@@ -227,13 +222,13 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	 * 
 	 */
 	
-	int opponentMaxMobility(MachineState state, Role role) {
+	int opponentMaxMobility(MachineState state, Role role) throws MoveDefinitionException {
 		List<Role> roles = getStateMachine().getRoles();
 		List<Move> moveList = getStateMachine().getLegalMoves(state,role);
 		ArrayList<Integer> mobilityArray = new ArrayList<Integer>();
 		int mobilitySum = 0;
 		for(Role opponentRole : roles) {
-			int mobility = evalfun(state,opponentRole);//use either one of our mobility functions here
+			int mobility = mobility1(state,opponentRole);//use either one of our mobility functions here
 			mobilitySum += mobility;
 			mobilityArray.add(mobility);
 		}
@@ -245,7 +240,7 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	 * 
 	 */
 	
-	public int getMaxGoal(MachineState state, Role role) throws GoalDefinitionException	{
+	/*public int getMaxGoal(MachineState state, Role role) throws GoalDefinitionException	{
 		Set<GdlSentence> results = prover.askAll(ProverQueryBuilder.getGoalQuery(role), ProverQueryBuilder.getContext(state));
 		if (results.size() != 1){
 			GamerLogger.logError("StateMachine", "Got goal results of size: " + results.size() + " when expecting size one.");
@@ -264,7 +259,7 @@ public final class ABSimpleGamer extends StateMachineGamer {
 	catch (Exception e)	{
 		throw new GoalDefinitionException(state, role);
 		}
-	}
+	}*/
 	
 	@Override
 	public String getName() {
